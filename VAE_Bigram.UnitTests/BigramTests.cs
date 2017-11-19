@@ -60,5 +60,21 @@ namespace VAE_Bigram.UnitTests
             var actual = Program.PerformCounts(input).Count();
             Assert.AreEqual(actual, expected);
         }
+        [Test]
+        public void PerformCounts_CountOccurrences()
+        {
+            var input = new List<string> { "the", "quick", "brown", "fox", "and", "the", "quick", "blue", "hare" };
+            var expected = new Dictionary<string, int>() {
+                    { "the quick", 2 },
+                    { "quick brown", 1 },
+                    { "brown fox", 1 },
+                    { "fox and", 1 },
+                    { "and the", 1 },
+                    { "quick blue", 1 },
+                    { "blue hare", 1 } };
+            var actual = Program.PerformCounts(input);
+
+            CollectionAssert.AreEqual(expected, actual);
+        }
     }
 }

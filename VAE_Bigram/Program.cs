@@ -40,7 +40,7 @@ namespace VAE_Bigram
             // output the result
             foreach (var phrase in wordsDict)
             {
-                Console.WriteLine($"{phrase.Key} {phrase.Value}");
+                Console.WriteLine($"\"{phrase.Key}\" {phrase.Value}");
             }
 
             Console.ReadLine();
